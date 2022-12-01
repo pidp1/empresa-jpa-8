@@ -15,7 +15,7 @@ public class Projeto {
     @Column(nullable = false)
     private Double orcamento;
 
-    @Column(nullable = false, length = 200)
+    @Column(nullable = false, length = 120) // NOT NULL, e 120 caracteres
     private String descricao;
 
     public Projeto() {}
