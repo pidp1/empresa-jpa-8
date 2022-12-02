@@ -10,8 +10,8 @@ public class ProjetoDTO {
     @NotBlank(message = "Este campo é obrigatorio")
     private String nome;
     @NotNull(message = "Este campo é obrigatorio")
-    @Min(value = 500, message = "Campo salário inválido")
-    @Max(value = 100000, message = "Campo salário inválido")
+    @Min(value = 500, message = "Campo orçamento inválido")
+    @Max(value = 100000, message = "Campo orçamento inválido")
     private Double orcamento;
     @NotBlank(message = "Este campo é obrigatorio")
     private String descricao;
