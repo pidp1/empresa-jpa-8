@@ -1,8 +1,9 @@
 package org.soulcodeacademy.empresa.controllers;
 
 import org.soulcodeacademy.empresa.domain.Dependente;
+import org.soulcodeacademy.empresa.domain.Empregado;
 import org.soulcodeacademy.empresa.domain.dto.DependenteDTO;
-import org.soulcodeacademy.empresa.services.DependenteService;
+import org.soulcodeacademy.empresa.domain.services.DependenteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -37,9 +38,9 @@ public class DependenteController {
         return this.dependenteService.atualizar(idDependente, dto);
     }
 
-    @GetMapping("/dependentes/empregados/{idEmpregados}")
-    public List<Dependente> listarPorEmpregado(@PathVariable Integer idEmpregado) {
-        return this.dependenteService.listarPorEmpregado(idEmpregado);
+    @GetMapping("/dependentes/empregados")
+    public List<Dependente> listarPorEmpregado(@RequestParam Empregado empregado) {
+        return this.dependenteService.listarPorEmpregado(empregado);
     }
 
 

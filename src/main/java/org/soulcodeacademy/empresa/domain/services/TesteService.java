@@ -1,4 +1,4 @@
-package org.soulcodeacademy.empresa.services;
+package org.soulcodeacademy.empresa.domain.services;
 
 import org.soulcodeacademy.empresa.domain.Dependente;
 import org.soulcodeacademy.empresa.domain.Empregado;

@@ -1,7 +1,5 @@
 package org.soulcodeacademy.empresa.domain.dto;
 
-import org.soulcodeacademy.empresa.domain.Endereco;
-
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
@@ -23,11 +21,11 @@ public class EmpregadoDTO {
     @Max(value = 100000, message = "Campo salário inválido")
     private Double salario;
 
-    public Integer getIdEmpregado() {
+    public Integer getEmpregado() {
         return idEmpregado;
     }
 
-    public void setIdEmpregado(Integer idEmpregado) {
+    public void setEmpregado(Integer idEmpregado) {
         this.idEmpregado = idEmpregado;
     }
 
