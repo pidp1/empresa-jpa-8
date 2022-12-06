@@ -1,4 +1,4 @@
-package org.soulcodeacademy.empresa.services.errors;
+package org.soulcodeacademy.empresa.domain.services.errors;
 
 // Esta classe representa o erro de regra de negócio
 // quando não encontramos cargos, clientes, funcionarios, chamados

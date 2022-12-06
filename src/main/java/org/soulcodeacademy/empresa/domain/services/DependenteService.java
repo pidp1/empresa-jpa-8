@@ -1,11 +1,11 @@
-package org.soulcodeacademy.empresa.services;
+package org.soulcodeacademy.empresa.domain.services;
 
 import org.soulcodeacademy.empresa.domain.Dependente;
 
 import org.soulcodeacademy.empresa.domain.Empregado;
 import org.soulcodeacademy.empresa.domain.dto.DependenteDTO;
 import org.soulcodeacademy.empresa.repositories.DependenteRepository;
-import org.soulcodeacademy.empresa.services.errors.RecursoNaoEncontradoError;
+import org.soulcodeacademy.empresa.domain.services.errors.RecursoNaoEncontradoError;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -41,12 +41,13 @@ public class DependenteService {
     }
 
     public Dependente atualizar(Integer idDependente, DependenteDTO dto) {
+
         Dependente dependenteAtual = this.getDependente(idDependente);
-        Empregado empregado = this.empregadoService.getResponsavel(dto.getIdEmpregado());
+
+        Empregado empregado = this.empregadoService.getEmpregado(dto.getIdEmpregado());
         dependenteAtual.setNome(dto.getNome());
         dependenteAtual.setIdade(dto.getIdade());
         dependenteAtual.setResponsavel(empregado);
-
 
         return this.dependenteRepository.save(dependenteAtual);
     }
@@ -56,5 +57,7 @@ public class DependenteService {
         this.dependenteRepository.delete(dependente);
     }
 
-
+    public List<Dependente> listarPorEmpregado(Empregado empregado) {
+    return this.dependenteRepository.findBYEmpregado(empregado);
+    }
 }
